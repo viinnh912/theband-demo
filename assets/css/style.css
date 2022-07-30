@@ -18,6 +18,9 @@
   text-align: center !important;
 }
 
+.pull-right {
+  float: right;
+}
 .row {
   margin-left: -8px;
   margin-right: -8px;
@@ -191,7 +194,7 @@
 
 #content .content-section {
   width: 800px;
-  padding: 64px 0;
+  padding: 64px 0 112px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -275,7 +278,6 @@
 /* Place Section */
 .places-list {
   margin-top: 32px;
-  margin-bottom: 48px;
 }
 
 .places-item {
@@ -313,15 +315,17 @@
   line-height: 1.4;
 }
 
-.place-buy-btn {
+.btn {
   text-decoration: none;
   color: #fff;
   background-color: #000;
   padding: 11px 16px;
+  border: none;
 }
 
-.place-buy-btn:hover {
+.btn:hover {
   background-color: #ccc;
+  cursor: pointer;
 }
 
 .modal {
@@ -457,14 +461,33 @@
   width: 100%;
 }
 
-.contact-form .form-submit-btn {
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #000;
-  padding: 10px 16px;
-  float: right;
+.map-ssection img {
+  width: 100%;
 }
 
-.contact-form .form-submit-btn:hover {
-  background-color: #ccc;
+.footer {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.footer .social {
+  font-size: 24px;
+}
+
+.footer .social a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.footer .social a:hover,
+.footer .copyright a:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.footer .copyright {
+  margin-top: 15px;
+}
+
+.footer .copyright a {
+  color: rgba(0, 0, 0, 0.6);
 }
