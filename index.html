@@ -6,6 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./assets/css/style.css">
+   <link rel="stylesheet" href="./assets/css/responsive.css">
    <link rel="stylesheet" href="./assets/font/Font/themify-icons/themify-icons.css">
    <!-- Phải link file font.css vào trước khi làm CSS cho HTML -->
    <title>The Band By Terry</title>
@@ -16,10 +17,10 @@
       <div id="header">
          <!-- Begin Nav -->
          <ul id="nav">
-            <li><a href="">Home</a></li>
-            <li><a href="">Band</a></li>
-            <li><a href="">Tour</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#band">Band</a></li>
+            <li><a href="#tour">Tour</a></li>
+            <li><a href="#contact">Contact</a></li>
             <li>
                <a href="#">
                   More
@@ -38,11 +39,20 @@
          <div class="search-btn">
             <i class=" search-icon ti-search"></i>
          </div>
+
+         <div id="mobile-menu" class="mobile-menu-btn">
+            <i class="menu-icon ti-menu"></i>
+         </div>
+
+         <!-- <div class="mobile-menu-btn">
+            <i class="menu-icon ti-menu"></i>
+         </div> -->
          <!-- End Search Button -->
       </div>
       <!-- Sử dụng kỹ thuật nâng cao background image thay vì chỉ image -->
       <div id="slider">
          <div class="text-content">
+            <!-- <img src="/W3_SCHOOL_THE BAND/assets/img/slider1.jpg" alt="band"> -->
             <h2 class="text-heading">New York</h2>
             <div class="text-descrition">The atmosphere in New York is lorem ipsum </div>
          </div>
@@ -50,7 +60,7 @@
 
       <div id="content">
          <!-- About section -->
-         <div class="content-section">
+         <div id="band" class="content-section">
             <h2 class="section-heading">THE BAND</h2>
             <p class="section-sub-heading">We love music</p>
             <p class="about-text">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur
@@ -79,7 +89,7 @@
          </div>
 
          <!-- Tour section -->
-         <div class="tour-section">
+         <div id="tour" class="tour-section">
             <div class="content-section">
                <h2 class="section-heading text-white">TOUR DATES</h2>
                <p class="section-sub-heading text-white">Remember to book your tickets</p>
@@ -126,7 +136,7 @@
 
 
          <!--Begin Contact section -->
-         <div class="content-section">
+         <div id="contact" class="content-section">
             <h2 class="section-heading">CONTACT</h2>
             <p class="section-sub-heading">Fan? Drop a note!</p>
             <!-- Grid System -->
@@ -178,7 +188,38 @@
       <p class="copyright">Powered by <a href="">w3.css</a></p>
    </div>
 
-   <!-- Modal ticket -->
+   <script>
+      var header = document.getElementById('header');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var headerHeight = header.clientHeight;
+
+      // Đóng mở mobile Menu
+      mobileMenu.onclick = function () {
+         var isClosed = header.clientHeight === headerHeight;
+         if (isClosed) {
+            header.style.height = 'auto';
+         } else {
+            header.style.height = null;
+         }
+      }
+
+      // Tự động đóng khi chọn menu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      for (let i = 0; i < menuItems.length; i++) {
+         var menuItem = menuItems[i];
+
+         menuItem.onclick = function {
+            let isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+            if (isParentMenu) {
+               event.preventDefault()
+            } else {
+               header.style.height = null;
+            }
+         }
+      }
+   </script>
+
+   <!-- Popup ticket -->
    <div class="modal js-modal">
       <div class="modal-container">
          <div class="modal-close js-modal-close">
