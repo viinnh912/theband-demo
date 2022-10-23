@@ -196,7 +196,7 @@
   padding-top: 50%;
   /* cách viết tắt background/background image/background-size/background repeat */
   /* background: url(/) top center / cover no-repeat; */
-  background: url('/assets/img/slider1.jpg') top center / cover no-repeat;
+  background: url('../img/slider1.jpg') top center / cover no-repeat;
 }
 
 #slider .text-content {
@@ -213,9 +213,10 @@
   font-size: 24px;
 }
 
-#slider .text-descrition {
+#slider .text-description {
   font-size: 15px;
   margin-top: 25px;
+  text-shadow: 0 0 1px #000;
 }
 
 #content .content-section {
@@ -354,6 +355,7 @@
   background-color: #000;
   padding: 11px 16px;
   border: none;
+  /* -webkit-appearance: none; */
 }
 
 .btn:hover {
